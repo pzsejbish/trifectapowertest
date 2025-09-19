@@ -132,4 +132,55 @@ button:focus-visible {
   body {
     @apply bg-background text-foreground;
   }
+  
+  /* Electric Grid Animation */
+  .bg-grid-16 {
+    background-size: 64px 64px;
+    background-image: 
+      linear-gradient(to right, rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(239, 68, 68, 0.1) 1px, transparent 1px);
+  }
+  
+  .bg-grid-red\/20 {
+    background-image: 
+      linear-gradient(to right, rgba(239, 68, 68, 0.2) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.15) 1px, transparent 1px);
+  }
+  
+  .bg-grid-red\/10 {
+    background-image: 
+      linear-gradient(to right, rgba(239, 68, 68, 0.1) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+  }
+  
+  /* Electric Glow Animations */
+  @keyframes electric-pulse {
+    0%, 100% { 
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+      opacity: 0.8;
+    }
+    50% { 
+      box-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(239, 68, 68, 0.4);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes spark {
+    0% { 
+      transform: scale(0) rotate(0deg);
+      opacity: 1;
+    }
+    100% { 
+      transform: scale(1.5) rotate(180deg);
+      opacity: 0;
+    }
+  }
+  
+  .electric-pulse {
+    animation: electric-pulse 2s ease-in-out infinite;
+  }
+  
+  .spark {
+    animation: spark 0.6s ease-out;
+  }
 }

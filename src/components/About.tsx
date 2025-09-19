@@ -19,8 +19,14 @@ const About = () => {
       
       {/* Electric Energy Lines */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-red-500/30 to-transparent animate-pulse" />
-        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-red-400/20 to-transparent animate-pulse delay-1000" />
+        <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-blue-500/40 to-transparent animate-pulse" />
+        <div className="absolute top-0 right-1/3 w-px h-full bg-gradient-to-b from-transparent via-red-400/30 to-transparent animate-pulse delay-1000" />
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-blue-400/20 to-transparent animate-pulse delay-2000" />
+        
+        {/* Electric Nodes */}
+        <div className="absolute top-1/4 left-1/3 w-3 h-3 bg-blue-400 rounded-full opacity-60 animate-ping" />
+        <div className="absolute bottom-1/3 right-1/4 w-2 h-2 bg-red-400 rounded-full opacity-70 animate-ping delay-1000" />
+        <div className="absolute top-2/3 left-2/3 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-50 animate-ping delay-2000" />
       </div>
       
       <div className="max-w-7xl mx-auto relative z-10">
@@ -89,9 +95,15 @@ const About = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 whileHover={{ scale: 1.05 }}
               >
-                <Card className="bg-red-900/20 backdrop-blur-md border-red-500/30 p-6 text-center hover:bg-red-900/30 transition-all duration-300 shadow-lg shadow-red-500/10">
+                <Card className="bg-red-900/20 backdrop-blur-md border-red-500/30 p-6 text-center hover:bg-blue-900/20 hover:border-blue-500/40 transition-all duration-300 shadow-lg shadow-red-500/10 hover:shadow-blue-500/20 relative overflow-hidden group">
+                  {/* Electric Pulse Effect */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-400/0 via-blue-300/0 to-blue-400/0 group-hover:from-blue-400/10 group-hover:via-blue-300/5 group-hover:to-blue-400/10 transition-all duration-500" />
+                  {/* Corner Electric Spark */}
+                  <div className="absolute top-1 right-1 w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 animate-ping transition-opacity" />
                   <CardContent className="p-0">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-black flex items-center justify-center mx-auto mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500 to-black flex items-center justify-center mx-auto mb-4 group-hover:shadow-blue-500/40 transition-all duration-300 relative overflow-hidden">
+                      {/* Electric Current Through Icon */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-300/40 to-blue-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-800" />
                       <stat.icon className="w-6 h-6 text-white" />
                     </div>
                     <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>

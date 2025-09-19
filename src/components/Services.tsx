@@ -72,12 +72,19 @@ const Services = () => {
               whileHover={{ y: -8, scale: 1.02 }}
               className="group"
             >
-              <Card className="h-full bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl hover:shadow-red-500/10 transition-all duration-300 overflow-hidden group-hover:border-red-500/20">
+              <Card className="h-full bg-white/90 backdrop-blur-sm border-0 shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 overflow-hidden group-hover:border-blue-500/30 relative">
+                {/* Electric Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-blue-400/0 to-blue-500/0 group-hover:from-blue-500/5 group-hover:via-blue-400/5 group-hover:to-blue-500/5 transition-all duration-500" />
+                {/* Electric Corner Sparks */}
+                <div className="absolute top-2 right-2 w-1 h-1 bg-blue-400 rounded-full opacity-0 group-hover:opacity-100 group-hover:animate-ping transition-opacity duration-300" />
+                <div className="absolute bottom-2 left-2 w-0.5 h-0.5 bg-red-400 rounded-full opacity-0 group-hover:opacity-80 group-hover:animate-ping delay-200 transition-opacity duration-300" />
                 <CardHeader className="pb-4">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-black flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-red-500/30">
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-red-600 to-black flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-blue-500/50 transition-all duration-300 shadow-lg shadow-red-500/30 relative overflow-hidden">
+                    {/* Electric Current Effect */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-blue-300/30 to-blue-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                     <service.icon className="w-8 h-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-red-600 transition-colors">
+                  <CardTitle className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </CardTitle>
                 </CardHeader>

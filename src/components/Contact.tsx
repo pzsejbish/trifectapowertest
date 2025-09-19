@@ -255,8 +255,9 @@ Message: ${formData.message}
                     type="submit"
                     size="lg"
                     disabled={isSubmitting}
-                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-lg shadow-red-500/30 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                    className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-blue-600 hover:to-red-700 text-white border-0 shadow-lg shadow-red-500/30 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-blue-500/50 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 relative overflow-hidden group"
                   >
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-300/30 to-blue-500/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
                     {isSubmitting ? (
                       <div className="flex items-center gap-2">
                         <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />

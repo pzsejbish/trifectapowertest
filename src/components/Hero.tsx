@@ -29,9 +29,20 @@ const Hero = () => {
       
       {/* Electric Lightning Effects */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-1 h-32 bg-gradient-to-b from-transparent via-red-500 to-transparent opacity-30 animate-pulse" />
-        <div className="absolute top-1/3 right-1/3 w-1 h-24 bg-gradient-to-b from-transparent via-red-400 to-transparent opacity-40 animate-pulse delay-1000" />
-        <div className="absolute bottom-1/4 left-1/3 w-1 h-28 bg-gradient-to-b from-transparent via-red-600 to-transparent opacity-35 animate-pulse delay-2000" />
+        {/* Lightning Bolts */}
+        <div className="absolute top-1/4 left-1/4 w-1 h-32 bg-gradient-to-b from-transparent via-blue-400 to-transparent opacity-50 animate-pulse" />
+        <div className="absolute top-1/3 right-1/3 w-1 h-24 bg-gradient-to-b from-transparent via-red-400 to-transparent opacity-60 animate-pulse delay-1000" />
+        <div className="absolute bottom-1/4 left-1/3 w-1 h-28 bg-gradient-to-b from-transparent via-blue-500 to-transparent opacity-45 animate-pulse delay-2000" />
+        
+        {/* Electric Particles */}
+        <div className="absolute top-1/2 left-1/6 w-2 h-2 bg-blue-400 rounded-full opacity-80 animate-ping" />
+        <div className="absolute top-3/4 right-1/4 w-1 h-1 bg-red-400 rounded-full opacity-70 animate-ping delay-500" />
+        <div className="absolute top-1/6 right-1/6 w-1.5 h-1.5 bg-blue-300 rounded-full opacity-60 animate-ping delay-1500" />
+        <div className="absolute bottom-1/3 left-1/2 w-1 h-1 bg-red-300 rounded-full opacity-50 animate-ping delay-2500" />
+        
+        {/* Electric Current Lines */}
+        <div className="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-blue-500/0 via-blue-400/30 to-blue-500/0 animate-pulse delay-500" />
+        <div className="absolute top-0 right-1/4 w-px h-full bg-gradient-to-b from-red-500/0 via-red-400/20 to-red-500/0 animate-pulse delay-1500" />
       </div>
       
       <div className="relative z-10 text-center text-white px-6 max-w-5xl mx-auto">
@@ -76,15 +87,15 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="flex flex-wrap justify-center items-center gap-6 mb-10 text-sm md:text-base"
         >
-          <div className="flex items-center gap-2 bg-red-900/30 backdrop-blur-md px-4 py-2 rounded-full border border-red-500/30 shadow-lg shadow-red-500/20">
+          <div className="flex items-center gap-2 bg-red-900/30 backdrop-blur-md px-4 py-2 rounded-full border border-red-500/30 shadow-lg shadow-red-500/20 hover:shadow-blue-500/30 hover:border-blue-500/40 transition-all duration-300">
             <Phone className="w-4 h-4 text-red-300" />
             <span>(877) 898-0731</span>
           </div>
-          <div className="flex items-center gap-2 bg-red-900/30 backdrop-blur-md px-4 py-2 rounded-full border border-red-500/30 shadow-lg shadow-red-500/20">
+          <div className="flex items-center gap-2 bg-red-900/30 backdrop-blur-md px-4 py-2 rounded-full border border-red-500/30 shadow-lg shadow-red-500/20 hover:shadow-blue-500/30 hover:border-blue-500/40 transition-all duration-300">
             <Mail className="w-4 h-4 text-red-300" />
             <span>trifectapower3@gmail.com</span>
           </div>
-          <div className="flex items-center gap-2 bg-red-900/30 backdrop-blur-md px-4 py-2 rounded-full border border-red-500/30 shadow-lg shadow-red-500/20">
+          <div className="flex items-center gap-2 bg-red-900/30 backdrop-blur-md px-4 py-2 rounded-full border border-red-500/30 shadow-lg shadow-red-500/20 hover:shadow-blue-500/30 hover:border-blue-500/40 transition-all duration-300">
             <MapPin className="w-4 h-4 text-red-300" />
             <span>Riverside, CA</span>
           </div>
@@ -100,15 +111,16 @@ const Hero = () => {
           <Button 
             size="lg" 
             onClick={scrollToContact}
-            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white border-0 shadow-2xl shadow-red-500/30 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-red-500/50"
+            className="bg-gradient-to-r from-red-600 to-red-700 hover:from-blue-600 hover:to-red-700 text-white border-0 shadow-2xl shadow-red-500/30 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:shadow-blue-500/50 relative overflow-hidden group"
           >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/0 via-blue-400/20 to-blue-600/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             Get Free Quote
           </Button>
           <Button 
             size="lg" 
             variant="outline"
             onClick={() => window.open('tel:8778980731')}
-            className="border-red-500/50 text-white hover:bg-red-900/20 backdrop-blur-md px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:border-red-400"
+            className="border-red-500/50 text-white hover:bg-blue-900/20 backdrop-blur-md px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105 hover:border-blue-400 hover:text-blue-200 hover:shadow-lg hover:shadow-blue-500/20"
           >
             Call Now
           </Button>
