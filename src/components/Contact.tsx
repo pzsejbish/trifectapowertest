@@ -58,24 +58,27 @@ const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission - in a real app, you'd send this to your backend
-      const emailBody = `
-Name: ${formData.name}
-Email: ${formData.email}
-Phone: ${formData.phone}
-Service: ${formData.service}
-Message: ${formData.message}
-      `;
+      // Submit to Supabase
+      const submission: ContactSubmission = {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone || null,
+        service: formData.service || null,
+        message: formData.message,
+        status: 'new'
+      };
 
-      // Create mailto link
-      const mailtoLink = `mailto:trifectapower3@gmail.com?subject=New Contact Form Submission from ${formData.name}&body=${encodeURIComponent(emailBody)}`;
-      
-      // Open email client
-      window.location.href = mailtoLink;
+      const { error } = await supabase
+        .from('contact_submissions')
+        .insert([submission]);
+
+      if (error) {
+        throw error;
+      }
 
       toast({
-        title: "Message Sent!",
-        description: "Your email client has opened with your message. Please send the email to complete your request.",
+        title: "Quote Request Submitted! ⚡",
+        description: "We've received your request and will contact you within 24 hours to discuss your electrical project.",
       });
 
       // Reset form
@@ -89,7 +92,7 @@ Message: ${formData.message}
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was an issue processing your request. Please try calling us directly.",
+        description: "There was an issue submitting your request. Please try calling us directly at (877) 898-0731.",
         variant: "destructive",
       });
     } finally {
